@@ -6,6 +6,9 @@ Lo que ven los apoderados dentro de la app está en `js/novedades.js` (*Novedade
 Formato de versión **X.Y.Z**: X = cambio grande (nueva materia o rediseño) · Y = capítulo o función nueva · Z = ajustes y arreglos.
 La versión de los archivos (`?v=` en `index.html` y `VERSION` en `sw.js`) es un número interno aparte.
 
+## 2.8.6 — 2026-11-09 (archivos v34)
+- **Diploma:** se quita la firma; al pie queda solo la fecha y el sello "¡BRAVO!".
+
 ## 2.8.5 — 2026-11-09 (archivos v33)
 - **Diploma:** el título va sin marco (texto rojo con contorno blanco y estrellas, menos "cuadrado"); se quita la sección de avance por capítulo, que crecía con cada capítulo nuevo y no cabía (el diploma queda estable aunque se agreguen capítulos); medallas más grandes; la firma dice "Firma de Poli".
 

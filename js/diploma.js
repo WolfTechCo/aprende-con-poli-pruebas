@@ -65,7 +65,6 @@ html,body{height:100%;background:#fff;font-family:"Baloo 2","Trebuchet MS",Arial
 .md.on{background:#fff3b8;border-color:#f5a500;filter:none;opacity:1;box-shadow:0 calc(var(--u)*.45) 0 #e09a00}
 .goal{font-weight:800;font-size:calc(var(--u)*2.3);color:#7447e0;padding-right:calc(var(--u)*13)}
 .foot{width:100%;padding-right:calc(var(--u)*17);display:flex;justify-content:space-between;align-items:flex-end;font-weight:700;font-size:calc(var(--u)*2.4);color:#5a5d9a}
-.foot .sig{border-top:calc(var(--u)*.3) solid #5a5d9a;padding:calc(var(--u)*.3) calc(var(--u)*5) 0;font-weight:800;color:#7c5cff;font-size:calc(var(--u)*3)}
 .seal{position:absolute;right:calc(var(--u)*-1);bottom:calc(var(--u)*-1.8);width:calc(var(--u)*15);height:auto;filter:drop-shadow(0 calc(var(--u)*.5) 0 rgba(0,0,0,.18))}
 `;
 
@@ -83,7 +82,7 @@ function dipDoc() {
     <div class="chips"><b>⭐ ${totalStars()} de ${maxStars()} estrellas</b><b>🏅 ${got.length} de ${MEDALS.length} medallas</b>${best ? `<b>🔥 mejor racha: ${best} ${best === 1 ? 'día' : 'días'}</b>` : ''}</div>
     <div class="meds">${MEDALS.map(m => `<span class="md ${got.includes(m) ? 'on' : ''}">${m.ico}</span>`).join('')}</div>
     <div class="goal">${goal}</div>
-    <div class="foot"><span>${dipEsc(date)}</span><span class="sig">Firma de Poli</span></div>
+    <div class="foot"><span>${dipEsc(date)}</span></div>
     ${dipSeal()}
   </div></div></body></html>`;
 }
