@@ -6,6 +6,9 @@ Lo que ven los apoderados dentro de la app está en `js/novedades.js` (*Novedade
 Formato de versión **X.Y.Z**: X = cambio grande (nueva materia o rediseño) · Y = capítulo o función nueva · Z = ajustes y arreglos.
 La versión de los archivos (`?v=` en `index.html` y `VERSION` en `sw.js`) es un número interno aparte.
 
+## 2.8.5 — 2026-11-09 (archivos v33)
+- **Diploma:** el título va sin marco (texto rojo con contorno blanco y estrellas, menos "cuadrado"); se quita la sección de avance por capítulo, que crecía con cada capítulo nuevo y no cabía (el diploma queda estable aunque se agreguen capítulos); medallas más grandes; la firma dice "Firma de Poli".
+
 ## 2.8.4 — 2026-11-09 (archivos v32)
 - **Diploma rediseñado, más llamativo y a hoja completa** (`js/diploma.js`): ahora es un documento aparte dentro de un iframe (`srcdoc`), con sus propios estilos medidos en "u" (≈ 1 % del ancho de la hoja). Así la vista previa es lo mismo que sale en el papel (A4 y carta) y no depende de los estilos de la app ni de la escala de impresión del navegador.
   Trae: cinta "¡Diploma de campeona!", Poli grande con su accesorio, trofeo, sello dorado "¡BRAVO!", franjas de colores, confeti, las **9 medallas** (ganadas con color y las que faltan en gris), la **próxima meta**, y el avance por capítulo con barras. El nombre se achica solo si es largo.

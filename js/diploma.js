@@ -51,8 +51,8 @@ html,body{height:100%;background:#fff;font-family:"Baloo 2","Trebuchet MS",Arial
 .card:before,.card:after{content:"";position:absolute;left:0;right:0;height:calc(var(--u)*1.6);background:var(--rb)}.card:before{top:0}.card:after{bottom:0}
 .deco{position:absolute;inset:0;width:100%;height:100%;opacity:.4}
 .in{position:relative;width:calc(var(--u)*92);height:calc(var(--u)*66);display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center}
-.ribbon{background:linear-gradient(#ff7b7b,#e8434b);color:#fff;font-weight:800;font-size:calc(var(--u)*5.2);line-height:1;padding:calc(var(--u)*1.1) calc(var(--u)*7) calc(var(--u)*1.7);border-radius:calc(var(--u)*1.6);box-shadow:0 calc(var(--u)*.7) 0 #b92d35;text-shadow:0 calc(var(--u)*.35) 0 rgba(0,0,0,.22)}
-.ribbon i{font-style:normal;color:#ffe27a;margin:0 calc(var(--u)*1.4)}
+.ttl{color:#e8434b;font-weight:800;font-size:calc(var(--u)*6.4);line-height:1;white-space:nowrap;-webkit-text-stroke:calc(var(--u)*.7) #fff;paint-order:stroke fill;text-shadow:0 calc(var(--u)*.7) 0 #b92d35}
+.ttl i{font-style:normal;color:#ffc233;-webkit-text-stroke:calc(var(--u)*.5) #fff;text-shadow:0 calc(var(--u)*.6) 0 #e09a00;margin:0 calc(var(--u)*2)}
 .mid{width:100%;display:grid;grid-template-columns:25% 1fr 22%;align-items:center}
 .poli{height:calc(var(--u)*23)}.poli svg{height:100%;width:auto;display:block;margin:auto;overflow:visible;filter:drop-shadow(0 calc(var(--u)*.6) 0 rgba(91,61,240,.2))}
 .sm{font-weight:700;font-size:calc(var(--u)*2.7);color:#5a5d9a;line-height:1.2}
@@ -61,12 +61,9 @@ html,body{height:100%;background:#fff;font-family:"Baloo 2","Trebuchet MS",Arial
 .chips{display:flex;gap:calc(var(--u)*1.2) calc(var(--u)*1.8);justify-content:center;flex-wrap:nowrap}
 .chips b{background:#fff;border:calc(var(--u)*.4) solid #ffc233;border-radius:99px;padding:calc(var(--u)*.3) calc(var(--u)*1.8);font-size:calc(var(--u)*2.4);font-weight:800;white-space:nowrap;box-shadow:0 calc(var(--u)*.4) 0 #ffe08a}
 .meds{display:flex;gap:calc(var(--u)*1.3);justify-content:center}
-.md{width:calc(var(--u)*5.8);height:calc(var(--u)*5.8);border-radius:50%;display:grid;place-items:center;font-size:calc(var(--u)*3.4);background:#e9e9f2;border:calc(var(--u)*.4) solid #d3d3e6;filter:grayscale(1);opacity:.4}
+.md{width:calc(var(--u)*7);height:calc(var(--u)*7);border-radius:50%;display:grid;place-items:center;font-size:calc(var(--u)*4.2);background:#e9e9f2;border:calc(var(--u)*.4) solid #d3d3e6;filter:grayscale(1);opacity:.4}
 .md.on{background:#fff3b8;border-color:#f5a500;filter:none;opacity:1;box-shadow:0 calc(var(--u)*.45) 0 #e09a00}
 .goal{font-weight:800;font-size:calc(var(--u)*2.3);color:#7447e0;padding-right:calc(var(--u)*13)}
-.chs{display:flex;gap:calc(var(--u)*2);width:100%;padding-right:calc(var(--u)*16)}
-.ch{flex:1;font-weight:800;font-size:calc(var(--u)*2);white-space:nowrap}.ch div{display:flex;justify-content:space-between;gap:calc(var(--u)*.8)}.ch em{font-style:normal;color:#e09a00}
-.bar{height:calc(var(--u)*1.5);border-radius:99px;background:#fff;border:calc(var(--u)*.28) solid #e6cf80;margin-top:calc(var(--u)*.4);overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#22c58b,#4ea8ff)}
 .foot{width:100%;padding-right:calc(var(--u)*17);display:flex;justify-content:space-between;align-items:flex-end;font-weight:700;font-size:calc(var(--u)*2.4);color:#5a5d9a}
 .foot .sig{border-top:calc(var(--u)*.3) solid #5a5d9a;padding:calc(var(--u)*.3) calc(var(--u)*5) 0;font-weight:800;color:#7c5cff;font-size:calc(var(--u)*3)}
 .seal{position:absolute;right:calc(var(--u)*-1);bottom:calc(var(--u)*-1.8);width:calc(var(--u)*15);height:auto;filter:drop-shadow(0 calc(var(--u)*.5) 0 rgba(0,0,0,.18))}
@@ -74,24 +71,19 @@ html,body{height:100%;background:#fff;font-family:"Baloo 2","Trebuchet MS",Arial
 
 function dipDoc() {
   const got = MEDALS.filter(m => m.ok()), nextM = MEDALS.find(m => !m.ok()), best = typeof streakInfo === 'function' ? streakInfo().best : 0;
-  const chap = Object.keys(CH).map(k => {
-    const C = CH[k], max = C.figs.length * 3 + 1 + 3, st = chStars(k), nm = C.label.replace(/<[^>]+>/g, '').replace(/^\d+\s*·\s*/, '').replace(/^Figuras\s+/, '');
-    return `<div class="ch"><div><span>${dipEsc(nm)}</span><em>★ ${st}/${max}</em></div><div class="bar"><i style="width:${Math.round(100 * st / max)}%"></i></div></div>`;
-  }).join('');
   const date = typeof fmtDate === 'function' ? fmtDate(dayKey()) : dayKey();
   const nameSize = Math.min(11, 46 / (0.58 * Math.max(1, save.name.length))).toFixed(1);
   const goal = nextM ? `🎯 Próxima meta: <b>${dipEsc(nextM.name)}</b> · ${dipEsc(nextM.how)}` : '🌟 ¡Ganaste todas las medallas!';
   return `<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Diploma de ${dipEsc(save.name)}</title><style>${DIP_CSS}</style></head><body>
   <div class="card">${dipDeco()}<div class="in">
-    <div class="ribbon"><i>★</i>¡Diploma de ${gx('campeona', 'campeón')}!<i>★</i></div>
+    <div class="ttl"><i>★</i>¡Diploma de ${gx('campeona', 'campeón')}!<i>★</i></div>
     <div class="mid"><div class="poli">${diplomaPoli()}</div>
       <div><div class="sm">Poli felicita a</div><div class="name" style="font-size:calc(var(--u)*${nameSize})">${dipEsc(save.name)}</div><div class="sm">por aprender jugando con formas y números</div></div>
       <div class="cup">🏆</div></div>
     <div class="chips"><b>⭐ ${totalStars()} de ${maxStars()} estrellas</b><b>🏅 ${got.length} de ${MEDALS.length} medallas</b>${best ? `<b>🔥 mejor racha: ${best} ${best === 1 ? 'día' : 'días'}</b>` : ''}</div>
     <div class="meds">${MEDALS.map(m => `<span class="md ${got.includes(m) ? 'on' : ''}">${m.ico}</span>`).join('')}</div>
     <div class="goal">${goal}</div>
-    <div class="chs">${chap}</div>
-    <div class="foot"><span>${dipEsc(date)}</span><span class="sig">Poli</span></div>
+    <div class="foot"><span>${dipEsc(date)}</span><span class="sig">Firma de Poli</span></div>
     ${dipSeal()}
   </div></div></body></html>`;
 }
