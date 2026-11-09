@@ -6,6 +6,12 @@ Lo que ven los apoderados dentro de la app está en `js/novedades.js` (*Novedade
 Formato de versión **X.Y.Z**: X = cambio grande (nueva materia o rediseño) · Y = capítulo o función nueva · Z = ajustes y arreglos.
 La versión de los archivos (`?v=` en `index.html` y `VERSION` en `sw.js`) es un número interno aparte.
 
+## 2.8.4 — 2026-11-09 (archivos v32)
+- **Diploma rediseñado, más llamativo y a hoja completa** (`js/diploma.js`): ahora es un documento aparte dentro de un iframe (`srcdoc`), con sus propios estilos medidos en "u" (≈ 1 % del ancho de la hoja). Así la vista previa es lo mismo que sale en el papel (A4 y carta) y no depende de los estilos de la app ni de la escala de impresión del navegador.
+  Trae: cinta "¡Diploma de campeona!", Poli grande con su accesorio, trofeo, sello dorado "¡BRAVO!", franjas de colores, confeti, las **9 medallas** (ganadas con color y las que faltan en gris), la **próxima meta**, y el avance por capítulo con barras. El nombre se achica solo si es largo.
+- Se quitan de `css/style.css` las reglas `@media print` del diploma anterior; quedan solo `.dwrap` y `.dframe` (marco de la vista previa).
+- `@page` con margen 0: Chrome no agrega el encabezado y pie de página (fecha y dirección) al guardar el PDF.
+
 ## 2.8.3 — 2026-11-09 (archivos v31)
 - **Diploma al imprimir o guardar PDF:** el texto salía muy chico y perdido porque usaba medidas de pantalla (`vh`) y se colaba el fondo celeste de la app. Ahora la hoja usa medidas de papel (mm y pt), fondo blanco y entra en una sola página en A4 y carta. En vez del unicornio 🦄 lleva a **Poli** con el accesorio que tenga puesto (`diplomaPoli()`, con su degradado con otro id para que se dibuje en el PDF).
 
