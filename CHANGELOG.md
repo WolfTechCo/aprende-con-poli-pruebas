@@ -6,6 +6,9 @@ Lo que ven los apoderados dentro de la app está en `js/novedades.js` (*Novedade
 Formato de versión **X.Y.Z**: X = cambio grande (nueva materia o rediseño) · Y = capítulo o función nueva · Z = ajustes y arreglos.
 La versión de los archivos (`?v=` en `index.html` y `VERSION` en `sw.js`) es un número interno aparte.
 
+## 2.8.3 — 2026-11-09 (archivos v31)
+- **Diploma al imprimir o guardar PDF:** el texto salía muy chico y perdido porque usaba medidas de pantalla (`vh`) y se colaba el fondo celeste de la app. Ahora la hoja usa medidas de papel (mm y pt), fondo blanco y entra en una sola página en A4 y carta. En vez del unicornio 🦄 lleva a **Poli** con el accesorio que tenga puesto (`diplomaPoli()`, con su degradado con otro id para que se dibuje en el PDF).
+
 ## 2.8.2 — 2026-11-09 (archivos v30)
 - **Etiqueta "🧪 Pruebas"** (`boot()` en `js/app.js` y `#pruebasTag` en `css/style.css`): aparece solo si la dirección contiene "pruebas" (ambiente de pruebas) y también antepone 🧪 al título de la pestaña. En la app final no se ve nada, así que el código es el mismo en ambos repositorios y se puede pasar tal cual.
 

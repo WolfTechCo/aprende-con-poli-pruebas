@@ -17,7 +17,7 @@ function openDiploma() {
       <div class="dsmall">por aprender jugando con formas y números</div>
       <div class="dstats"><span>⭐ ${totalStars()} de ${maxStars()} estrellas</span><span>🏅 ${medals} ${medals === 1 ? 'medalla' : 'medallas'}</span>${best ? `<span>🔥 mejor racha: ${best} ${best === 1 ? 'día' : 'días'}</span>` : ''}</div>
       <div class="ddate"></div>
-      <div class="dsign">Poli 🦄</div>
+      <div class="dsign"><span class="dpoli">${diplomaPoli()}</span><span>Poli</span></div>
     </div>
     <div class="dip-btns"><button class="btn sm gold" id="dipPrint">🖨️ Imprimir o guardar PDF</button><button class="btn sm ghost" id="dipClose">Cerrar</button></div>`;
   $('.dname', ov).textContent = save.name;
@@ -30,5 +30,8 @@ function openDiploma() {
   sfx.win(); confetti(80);
   poli.cheer(`¡Mira, ${save.name}! Es tu diploma. ¡Te lo ganaste!`);
 }
+/* Poli (con su accesorio puesto) para la hoja. Su degradado lleva otro id: el de la pantalla queda oculto al imprimir
+   y, sin ese cambio, el relleno no se dibuja en el PDF */
+const diplomaPoli = () => (typeof poliSvg === 'function' ? poliSvg(save.acc) : POLI_SVG).replace(/id="pg"/, 'id="pgd"').replace(/url\(#pg\)/g, 'url(#pgd)');
 const dipKey = e => { if (e.key === 'Escape') closeDiploma(); };
 function closeDiploma() { document.removeEventListener('keydown', dipKey); $('.dip-ov')?.remove(); }

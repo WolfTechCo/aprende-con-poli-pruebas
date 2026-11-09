@@ -601,14 +601,20 @@ svg.join{width:var(--board);max-width:100%;height:auto}
 .dname{margin:0;font-size:clamp(30px,8vh,64px);color:var(--violet-d);line-height:1.1;word-break:break-word}
 .dstats{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;font-weight:800;font-size:clamp(12px,2.4vh,19px)}
 .ddate{font-weight:700;font-size:clamp(11px,2vh,16px);color:var(--ink2)}
-.dsign{font-weight:800;font-size:clamp(14px,3vh,24px);color:var(--violet)}
+.dsign{display:flex;align-items:center;gap:8px;font-weight:800;font-size:clamp(14px,3vh,24px);color:var(--violet)}
+.dpoli{display:block;height:clamp(30px,9vh,64px)}
+.dpoli svg{display:block;height:100%;width:auto;overflow:visible}
 .dip-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+/* al imprimir: solo el diploma, con medidas de papel (mm y pt), no de pantalla, y sobre fondo blanco */
 @media print{
+  html,body{background:#fff!important;margin:0}
   body>*:not(.dip-ov){display:none!important}
-  .dip-ov{position:static;background:none;display:block;padding:0}
+  .dip-ov{position:static;inset:auto;background:none;display:block;padding:0}
   .dip-btns{display:none}
-  .dcard{width:100%;max-height:none;box-shadow:none;min-height:90vh;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  @page{size:landscape;margin:10mm}
+  .dcard{width:auto;max-width:none;max-height:none;height:184mm;overflow:hidden;box-shadow:none;border-width:3mm;border-radius:7mm;padding:6mm 14mm;gap:3.5mm;-webkit-print-color-adjust:exact;print-color-adjust:exact;break-inside:avoid;page-break-inside:avoid}
+  .dstars{font-size:34pt}.dsmall{font-size:17pt}.dname{font-size:58pt}.dstats{font-size:16pt;gap:3mm 10mm}.ddate{font-size:14pt}.dsign{font-size:22pt;gap:4mm}
+  .dpoli{height:34mm}
+  @page{size:landscape;margin:8mm}
 }
 .pat{display:flex;align-items:center;justify-content:center;gap:clamp(2px,.8vw,8px);flex-wrap:nowrap;max-width:100%}
 .pat .pt{width:clamp(26px,min(7vw,9vh),52px);height:auto;flex:none}
