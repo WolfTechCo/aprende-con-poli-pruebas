@@ -6,6 +6,9 @@ Lo que ven los apoderados dentro de la app está en `js/novedades.js` (*Novedade
 Formato de versión **X.Y.Z**: X = cambio grande (nueva materia o rediseño) · Y = capítulo o función nueva · Z = ajustes y arreglos.
 La versión de los archivos (`?v=` en `index.html` y `VERSION` en `sw.js`) es un número interno aparte.
 
+## 2.8.2 — 2026-11-09 (archivos v30)
+- **Etiqueta "🧪 Pruebas"** (`boot()` en `js/app.js` y `#pruebasTag` en `css/style.css`): aparece solo si la dirección contiene "pruebas" (ambiente de pruebas) y también antepone 🧪 al título de la pestaña. En la app final no se ve nada, así que el código es el mismo en ambos repositorios y se puede pasar tal cual.
+
 ## 2.8.1 — 2026-11-06 (archivos v29)
 - **Mi avance:** el avance por tema va primero; después las medallas, el diploma y el guardarropa. "Desbloquear" más chico y en la misma fila que su texto (en celular gana filas); al desbloquear, la multiplicación cabe en una fila.
 - **Ajustes y secciones de adultos:** botones más chicos y formato "texto + botón" cuando cabe (Novedades, Respaldo, Instalar, Diploma). El nombre, "Cambiar" y "🗑️ Borrar" van en una sola fila.

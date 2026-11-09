@@ -888,3 +888,6 @@ svg.join{width:var(--board);max-width:100%;height:auto}
   .kid{padding:4px 8px;min-width:76px}.kid .av{width:32px;height:32px;font-size:17px}.kid b{font-size:14px}.whorow{padding-bottom:8px;gap:8px}
 }
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
+/* etiqueta del ambiente de pruebas (solo existe si la dirección dice "pruebas") */
+#pruebasTag{position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:70;pointer-events:none;background:#ff8a3d;color:#fff;font:800 11px/1 var(--font);padding:2px 12px 3px;border-radius:0 0 10px 10px;box-shadow:0 2px 0 #e0651a;letter-spacing:.03em}

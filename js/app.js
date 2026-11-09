@@ -1435,6 +1435,11 @@ addEventListener('resize', () => {
 
 /* arranca cuando ya cargaron todos los scripts (js/numeros.js agrega el capítulo 3) */
 const boot = () => {
+  // en el ambiente de pruebas (la dirección dice "pruebas") se muestra una etiqueta para no confundirlo con la app final
+  if (/pruebas/i.test(location.hostname + location.pathname)) {
+    document.title = '🧪 ' + document.title;
+    document.body.insertAdjacentHTML('beforeend', '<div id="pruebasTag" aria-hidden="true">🧪 Pruebas</div>');
+  }
   initBg(); updateVoiceIcon(); render();
   // modo sin internet (solo cuando la app está publicada, no al abrir el archivo directo)
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) navigator.serviceWorker.register('sw.js').catch(() => { });
