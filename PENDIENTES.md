@@ -1,28 +1,3 @@
-# Plan de entregas (solo en el ambiente de pruebas · actualizado el 21-11-2026)
-
-## Entrega 1 · versión 2.4.0 · rama `entrega-1` (lista para probar; falta aprobación para pasarla a la app final)
-- [x] Reporte de uso y opinión (estrellas de 0,5 a 5 y comentario), saludo según la hora, mejor voz.
-- [x] Capítulo 4: Patrones (3 islas, lección de inicio, juegos y Gran Desafío).
-- [x] Campana para Novedades · "+" para el menú del mapa · volver a la portada desde el mapa · "Recorrido" en Ajustes.
-- [x] Botones más compactos y en formato "texto + botón" (Ajustes, Desbloquear).
-- [x] Pestañas de capítulos en una fila · isla compacta en celulares bajos.
-- [x] Textos: el nombre se dice una sola vez en el saludo; las lecciones no repiten "¡Hola, nombre!".
-- [x] Novedades curadas (solo lo valioso para las familias) y recorrido actualizado (`TOURVER` 2).
-- [ ] Pruebas en tablet y notebook · revisar con la dueña en su celular · después Pull Request a `aprende-con-poli`.
-- [ ] Reporte por correo o formulario: falta el correo del proyecto (`FEEDBACK_MAIL` en `js/opinion.js`).
-
-## Entrega 2 · versión 3.0.0 (rediseño de la estructura; después de la investigación y de decidir)
-- [ ] Un solo lugar para gestionar perfiles (crear, cambiar, renombrar, eliminar, respaldo).
-- [ ] Reordenar Álbum, Mi avance y Ajustes; qué hace el contador de estrellas (hoy no hace nada al tocarlo).
-- [ ] Medallas fuera de Mi avance (lugar nuevo), diploma (ya aprobado, está en `integrada-2.8.6`), guardarropa de Poli y racha.
-- [ ] Recordar dónde estaba al volver a la app (perfil y mapa, sin pasar por la portada).
-- Investigación de mercado hecha: ver el informe y decidir (punto 11 del plan).
-
-## Entrega 3 · voz neuronal pregrabada (baja prioridad; cuando ya esté casi todo en la app final)
-- [ ] Revisar y clasificar los textos (hay muchos con nombre y números al azar) · cuenta de Azure la crea la dueña.
-
----
-
 # Ideas pendientes (para más adelante)
 
 ## Contenidos
