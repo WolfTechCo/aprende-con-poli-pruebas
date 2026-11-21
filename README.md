@@ -1,3 +1,9 @@
+> ## 🧪 Este es el AMBIENTE DE PRUEBAS
+> Aquí se prueban las entregas antes de pasarlas a la app que usan las familias, que está en el repositorio
+> [`aprende-con-poli`](https://github.com/WolfTechCo/aprende-con-poli). Se publica en https://wolftechco.github.io/aprende-con-poli-pruebas/
+> con la etiqueta «🧪 Pruebas», guarda su progreso aparte del de la app final y puede tener cosas a medias. El resto de este
+> documento describe la app (es el mismo de la app final).
+
 # Aprende con Poli
 
 App educativa gratuita para niños de educación básica, guiada por Poli: aprende jugando paso a paso, con ejercicios
